@@ -10,6 +10,7 @@ class AccLossPlotter(Callback):
 
     # Arguments
         graphs: list with some or all of ('acc', 'loss')
+        save_graph: Save graph as an image on Keras Callback 'on_train_end' event 
 
     """
 
