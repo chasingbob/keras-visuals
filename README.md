@@ -24,7 +24,7 @@ from visual_callbacks import AccLossPlotter
 ```python
 plotter = AccLossPlotter(graphs=['acc', 'loss'], save_graph=True)
 ```
-* *graphs* is a list of the different graphs we would like to plot.  
+* *graphs* is a list of the different graphs we would like to plot. Available ('acc', 'loss')
 * *save_graph* tells the Plotter to save a screenshot when training is finished.
 
 
