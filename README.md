@@ -15,7 +15,7 @@ The graphs are dynamic and will automatically update and scale: after each epoch
 
 ##The code
 
-**Import the *AccLossPlotter* **
+**Import AccLossPlotter**
 
 ```python
 from visual_callbacks import AccLossPlotter
