@@ -37,4 +37,19 @@ model.fit(X, Y, validation_split=0.2, nb_epoch=150, batch_size=10, callbacks=[pl
 ```
 
 
+##What's Next
+
+* Confusion Matrix Plot
+
+
+##Get Involved
+
+Feel free to send me a mail with feedback or a *Pull Request* with enhancements.
+
+* e: dries.cronje@outlook.com
+* t: @dries139
+
+
+
+
 
