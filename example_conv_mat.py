@@ -10,6 +10,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import train_test_split
+from visual_callbacks import ConfusionMatrixPlotter
 
 
 def plot_confusion_matrix(cm, classes,
@@ -26,11 +27,6 @@ def plot_confusion_matrix(cm, classes,
     plt.xticks(tick_marks, classes, rotation=45)
     plt.yticks(tick_marks, classes)
 
-    if normalize:
-        cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-        print("Normalized confusion matrix")
-    else:
-        print('Confusion matrix, without normalization')
     thresh = cm.max() / 2.
     for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
         plt.text(j, i, cm[i, j],
@@ -87,6 +83,10 @@ cnf_mat = confusion_matrix(max_y, max_pred)
 print(cnf_mat)
 class_names = ['Iris-setosa', 'Iris-versicolor', 'Iris-virginica']
 
-plt.figure()
-plot_confusion_matrix(cnf_mat, classes=class_names,title='Confusion matrix', normalize=True)
-plt.show()
+conf_plotter = ConfusionMatrixPlotter()
+conf_plotter.update(cnf_mat, class_names)
+
+#plt.figure()
+#plot_confusion_matrix(cnf_mat, classes=class_names,title='Confusion matrix', normalize=True)
+#plt.show()
+input("press ENTER to exit")

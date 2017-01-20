@@ -1,6 +1,8 @@
 from keras.callbacks import Callback
 import matplotlib.pyplot as plt    
 import matplotlib.patches as mpatches  
+import itertools
+import numpy as np
 
 
 class AccLossPlotter(Callback):
@@ -74,3 +76,45 @@ class AccLossPlotter(Callback):
     def on_train_end(self, logs={}):
         if self.save_graph:
             plt.savefig('training_acc_loss.png')
+
+class ConfusionMatrixPlotter():
+    """
+
+    # Arguments
+
+
+    """
+
+    def __init__(self, cmap=plt.cm.Blues, title='Confusion Matrix'):
+        plt.ion()
+        plt.show()
+        self.title = title
+        self.cmap = cmap
+
+    def update(self, conf_mat, classes, normalize=False):
+        """This function prints and plots the confusion matrix.
+        Normalization can be applied by setting `normalize=True`.
+        """
+        plt.imshow(conf_mat, interpolation='nearest', cmap=self.cmap)
+        plt.title(self.title)
+        plt.colorbar()
+        tick_marks = np.arange(len(classes))
+        plt.xticks(tick_marks, classes, rotation=45)
+        plt.yticks(tick_marks, classes)
+
+        if normalize:
+            conf_mat = conf_mat.astype('float') / conf_mat.sum(axis=1)[:, np.newaxis]
+
+        thresh = conf_mat.max() / 2.
+        for i, j in itertools.product(range(conf_mat.shape[0]), range(conf_mat.shape[1])):
+            plt.text(j, i, conf_mat[i, j],                                          
+                         horizontalalignment="center",
+                         color="white" if conf_mat[i, j] > thresh else "black")
+                                                                                                         
+        plt.tight_layout()                                                    
+        plt.ylabel('True label')                                              
+        plt.xlabel('Predicted label')                                         
+        plt.draw()
+
+
+
