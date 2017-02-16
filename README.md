@@ -6,12 +6,12 @@ Graphs to help you visualise the training of your Keras models.
 
 Graph after 50 epochs
 
-![Accuracy](/img/s1.png =250x)
+<img src="/img/s1.png" width="400"/>
 
 
 Graph after 150 epochs
 
-![Loss](/img/s2.png =250x)
+<img src="/img/s2.png" width="400"/>
 
 The graphs are dynamic and will automatically update and scale: after each epoch during the fit function.
 
