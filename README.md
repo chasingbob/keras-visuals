@@ -5,17 +5,19 @@ Graphs to help you visualise the training of your Keras models.
 ## Accuracy & loss graph
 
 Graph after 50 epochs
+
 ![Accuracy](/img/s1.png)
 
 
 Graph after 150 epochs
+
 ![Loss](/img/s2.png)
 
-The graphs are dynamic and will update after each epoch during the fit function.
+The graphs are dynamic and will automatically update and scale: after each epoch during the fit function.
 
 ####The code
 
-We import the *AccLossPlotter* class from the *visual_callbacks* package.
+**Import AccLossPlotter**
 
 ```python
 from visual_callbacks import AccLossPlotter
@@ -68,6 +70,21 @@ plotter = ConfusionMatrixPlotter(X_val=X_test, classes=class_names, Y_val=y_test
 ```python
 model.fit(X_train, y_train, nb_epoch=100, batch_size=16, callbacks=[plotter])
 ```
+
+
+##What's Next
+
+* Confusion Matrix Plot
+
+
+##Get Involved
+
+Feel free to send me a mail with feedback or a *Pull Request* with enhancements.
+
+* e: dries.cronje@outlook.com
+* t: @dries139
+
+
 
 
 
