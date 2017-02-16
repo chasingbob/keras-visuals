@@ -75,11 +75,7 @@ plotter = ConfusionMatrixPlotter(X_val=X_test, classes=class_names, Y_val=y_test
 model.fit(X_train, y_train, nb_epoch=100, batch_size=16, callbacks=[plotter])
 ```
 
-
-
-##Get Involved
-
-Feel free to send me a mail with feedback or a *Pull Request* with enhancements.
+Feel free to get in touch or send a *Pull Request*
 
 * e: dries.cronje@outlook.com
 * t: @dries139
