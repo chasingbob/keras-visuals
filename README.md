@@ -72,10 +72,6 @@ model.fit(X_train, y_train, nb_epoch=100, batch_size=16, callbacks=[plotter])
 ```
 
 
-##What's Next
-
-* Confusion Matrix Plot
-
 
 ##Get Involved
 
