@@ -42,6 +42,7 @@ model.fit(X, Y, validation_split=0.2, nb_epoch=150, batch_size=10, callbacks=[pl
 
 After 50 epochs
 ![Confusion](/img/c1.png =250x)
+<img src="/img/c1.png" width="250"/>
 
 
 After 100 epochs
