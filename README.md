@@ -47,7 +47,9 @@ After 50 epochs
 
 After 100 epochs
 
-<img src="/img/c2.png" width="400"/>
+<img src="/img/_c2.png" width="400"/>
+
+It is clear from the confusion matrix that your model is confusing iris-versicolor for iris-virginica. Directed insight like this is a valuable tool for finding problem areas and improving your model.
 
 
 ####The code
@@ -74,6 +76,11 @@ plotter = ConfusionMatrixPlotter(X_val=X_test, classes=class_names, Y_val=y_test
 ```python
 model.fit(X_train, y_train, nb_epoch=100, batch_size=16, callbacks=[plotter])
 ```
+
+**What is next**
+
+* Visualising Neural Network Layer Activation 
+* t-SNE visualisation
 
 **Collaboration**
 
