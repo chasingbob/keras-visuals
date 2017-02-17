@@ -98,13 +98,12 @@ class ConfusionMatrixPlotter(Callback):
         self.normalize = normalize
         self.cmap = cmap
         plt.ion()
-        plt.show()
+        #plt.show()
+        plt.figure()
 
         plt.title(self.title)
         
-        tick_marks = np.arange(len(self.classes))
-        plt.xticks(tick_marks, self.classes, rotation=45)
-        plt.yticks(tick_marks, self.classes)
+        
 
     def on_train_begin(self, logs={}):
         pass
@@ -127,13 +126,21 @@ class ConfusionMatrixPlotter(Callback):
                          color="white" if cnf_mat[i, j] > thresh else "black")
 
         plt.imshow(cnf_mat, interpolation='nearest', cmap=self.cmap)
+
+        # Labels
+        tick_marks = np.arange(len(self.classes))
+        plt.xticks(tick_marks, self.classes, rotation=45)
+        plt.yticks(tick_marks, self.classes)
+
         plt.colorbar()
                                                                                                          
         plt.tight_layout()                                                    
         plt.ylabel('True label')                                              
         plt.xlabel('Predicted label')                                         
-        plt.draw()
+        #plt.draw()
+        plt.show()
         plt.pause(0.001)
+
 
 
 
