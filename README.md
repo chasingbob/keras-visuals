@@ -52,7 +52,7 @@ After 100 epochs
 It is clear from the confusion matrix that your model is confusing *iris-versicolor* for *iris-virginica*. Directed insight like this is a valuable tool for finding problem areas and improving your model.
 
 
-####The code
+#### The code
 
 We import the *ConfusionMatrixPlotter* class from the *visual_callbacks* package.
 

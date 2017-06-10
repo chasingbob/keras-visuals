@@ -25,9 +25,8 @@ model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']
 plotter = AccLossPlotter(graphs=['acc', 'loss'], save_graph=True)
 
 # Add your plotter to the fit function's callbacks list
-model.fit(X, Y, validation_split=0.2, nb_epoch=150, batch_size=10, callbacks=[plotter])
+model.fit(X, Y, validation_split=0.2, nb_epoch=100, batch_size=28, callbacks=[plotter])
 
 # evaluate the model
 scores = model.evaluate(X, Y)
-print("\r\n%s: %.2f%%" % (model.metrics_names[1], scores[1]*100))
 input('Press ENTER to continue...')

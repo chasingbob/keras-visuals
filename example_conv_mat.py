@@ -39,7 +39,7 @@ plotter = ConfusionMatrixPlotter(X_val=X_test, classes=class_names, Y_val=y_test
 # create model
 model = Sequential()
 model.add(Dense(4, input_dim=4, init='normal', activation='relu'))
-model.add(Dense(3, init='normal', activation='sigmoid'))
+model.add(Dense(3, init='normal', activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # train
