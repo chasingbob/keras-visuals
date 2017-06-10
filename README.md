@@ -15,7 +15,7 @@ Graph after 150 epochs
 
 The graphs are dynamic and will automatically update and scale: after each epoch during the fit function.
 
-####The code
+#### The code
 
 **Import AccLossPlotter**
 
